@@ -1,0 +1,15 @@
+/build/
+/build-*/
+/out/
+
+/CMakeCache.txt
+/CMakeFiles/
+/_deps/
+
+.DS_Store
+CMakeUserPresets.json
+*.user
+
+# Editor state belongs to you, not to the project.
+/.vscode/
+/compile_commands.json
