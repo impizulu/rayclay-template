@@ -34,7 +34,8 @@ static void content(RC_App *app, RC_Color *logo)
             shortcut("Space  +  drag", "pan  (optical mode, opt-in)");
         }
 
-        bool optical = rcAppZoomMode(app) == RC_ZOOM_OPTICAL;
+        RC_Window *window = rcAppMainWindow(app);
+        bool optical = rcWindowZoomMode(window) == RC_ZOOM_OPTICAL;
         rcBox(.id = "Mode", .w = "fit", .px = 14, .py = 8,
               .borderRadius = "all-sm",
               .bg = rcIsHovered("Mode") ? BG_HOVER : CLEAR,
@@ -44,7 +45,7 @@ static void content(RC_App *app, RC_Color *logo)
                     .color = FG_TEXT);
         }
         if (rcClicked("Mode"))
-            rcAppSetZoomMode(app,
-                             optical ? RC_ZOOM_LAYOUT : RC_ZOOM_OPTICAL);
+            rcWindowSetZoomMode(window,
+                                optical ? RC_ZOOM_LAYOUT : RC_ZOOM_OPTICAL);
     }
 }

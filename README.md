@@ -7,9 +7,8 @@ RayClay is fetched from GitHub at configure time, so there is no library source
 in this repository. `GIT_TAG main` follows the latest release.
 
 To pin a version, replace `main` in `CMakeLists.txt` with a commit SHA. Do that
-for anything you intend to keep building: RayClay's public history is rewritten
-to a single commit per minor release, so `main` is a new commit each time rather
-than a moving point on a shared history.
+for anything you intend to keep building: `main` moves to each new release, and
+a release can change the API.
 
 ## Prerequisites
 
